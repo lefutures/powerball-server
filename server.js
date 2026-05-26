@@ -218,6 +218,11 @@ app.get("/stats", (req, res) => {
   });
 });
 
+app.get("/privacy", (req, res) => {
+  const path = require("path");
+  res.sendFile(path.join(__dirname, "privacy.html"));
+});
+
 app.get("/health", (req, res) => {
   res.json({ status: "running", schedule: "Mon, Wed & Sat at 11 PM ET" });
 });
